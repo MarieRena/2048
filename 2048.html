@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Rush 2048</title>
+    <link rel="stylesheet" href="2048.css">
+    <link rel="stylesheet" href="tile-style-2048.css">
+    <link rel="stylesheet" href="stars.css">
+    <link href="https://fonts.googleapis.com/css?family=Amatic+SC|Anton|Codystar|Cookie|Indie+Flower|Lobster+Two|Londrina+Outline|Londrina+Shadow|Londrina+Sketch|Monoton|Montserrat|Permanent+Marker|Raleway+Dots|Shadows+Into+Light" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Quicksand|Varela|Varela+Round" rel="stylesheet">
+</head>
+<body>
+    <section class="wrapper">
+        <div id="stars"></div>
+        <div id="stars2"></div>
+        <div id="stars3"></div>
+    <div class="container">
+       
+    <div class="Games">
+            <div class="header">
+                    <div class="title">2048</div>
+                            <div class="scoreContainer"><p>SCORE</p>  <p id="score"></p></div>
+                            <div class="bestScoreContainer">
+                                <p>BEST</p>
+                                <p id="bestScore"></p>
+                            </div>
+                    <div class="rules">Join the numbers and get to the <span class="">2048</span> tile!</div>
+                    <div class="message"></div>
+            </div>
+        <!-- le 2048 sera inséré ici -->
+    </div>
+    <div class="buttons">
+        <div class="restart"><button id="restart">NEW GAME</button></div>
+        <div class="undo"><img src="undo.png" id="undo"></div>
+        <div class="redo"><img src="redo-hide.png" id="redo"></div>
+        <div class="question"><img src="question.png" id="question"></div>
+    </div>
+    <div id="myModal" class="modal">
+    <div class="modalContent">
+            <span class="close">&times;</span>
+        <p id="gamesrules"><span class="modalTitle">HOW TO PLAY</span> <br>Use your arrow keys to move the tiles. When two tiles with the same number touch, they merge into one! <br>
+            <br><span class="modalTitle">CREDITS</span><br>Created by Gabriele Cirulli. Based on 1024 by Veewo Studio and conceptually similar to Threes by Asher Vollmer.</p>
+    </div>
+    </div>
+    <div id="loose" class="loose">
+        <div class="modalLoose">
+                <span class="closeLoose">&times;</span>
+            <p id="looser">
+                <span class="looserTitle">GAME OVER LOOSER</span><br> <br>Try again !
+                <img src="loose.gif">
+                <div class="restart"><button>NEW GAME</button></div>
+
+        </div>
+    </div>
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+    <script type="text/javascript" src="2048.js"></script>
+    <script type="text/javascript">
+        $(function()
+        {
+            $('.Games').game2048(); // appel de la fonction 'game2048' du pluggin appliquée à la div de class 'Games'
+        });
+    </script>
+</body>
+</html>
